@@ -1,0 +1,289 @@
+{
+	"info": {
+		"name": "Shabakkat API",
+		"description": "API collection for the Shabakkat website backend (Laravel). Set the {{baseUrl}} variable to your server's base URL. All endpoints are prefixed with /api.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [
+					{ "key": "Accept", "value": "application/json" }
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/health",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "health"]
+				}
+			}
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "List Projects",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/projects",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "projects"]
+						}
+					}
+				},
+				{
+					"name": "Get Project by Slug",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/projects/:slug",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "projects", ":slug"],
+							"variable": [
+								{ "key": "slug", "value": "example-project-slug" }
+							]
+						}
+					}
+				},
+				{
+					"name": "Featured Projects",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/featured-projects",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "featured-projects"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Service Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/service-categories",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "service-categories"]
+						}
+					}
+				},
+				{
+					"name": "List Services",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/services",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "services"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Industries",
+			"item": [
+				{
+					"name": "List Industries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/industries",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "industries"]
+						}
+					}
+				},
+				{
+					"name": "Get Industry by Slug",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/industries/:slug",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "industries", ":slug"],
+							"variable": [
+								{ "key": "slug", "value": "example-industry-slug" }
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Partners",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/partners",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "partners"]
+						}
+					}
+				},
+				{
+					"name": "Certifications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/certifications",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "certifications"]
+						}
+					}
+				},
+				{
+					"name": "Offices",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/offices",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "offices"]
+						}
+					}
+				},
+				{
+					"name": "Stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/stats",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "stats"]
+						}
+					}
+				},
+				{
+					"name": "Testimonials",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/testimonials",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "testimonials"]
+						}
+					}
+				},
+				{
+					"name": "Awards",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/awards",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "awards"]
+						}
+					}
+				},
+				{
+					"name": "Openings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/openings",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "openings"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "FAQs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{ "key": "Accept", "value": "application/json" }
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/faqs",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "faqs"]
+				}
+			}
+		},
+		{
+			"name": "Submit Contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{ "key": "Accept", "value": "application/json" },
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"company\": \"Acme Inc\",\n    \"email\": \"john@example.com\",\n    \"phone\": \"+1234567890\",\n    \"service\": \"Consulting\",\n    \"message\": \"Hello, I'd like to learn more about your services.\"\n}",
+					"options": {
+						"raw": { "language": "json" }
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/contact",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "contact"]
+				},
+				"description": "Required fields: name, email, message. Optional: company, phone, service. A hidden 'website' honeypot field, if filled, returns {ok:true} without saving."
+			}
+		}
+	]
+}
