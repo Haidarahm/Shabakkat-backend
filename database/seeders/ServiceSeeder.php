@@ -1,0 +1,154 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Service;
+use Illuminate\Database\Seeder;
+
+class ServiceSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $services = [
+            [
+                'slug' => 'network-rollout',
+                'category_slug' => 'engineering-services',
+                'index_label' => '1.1',
+                'eyebrow' => 'NETWORK INFRASTRUCTURE & DEPLOYMENT',
+                'title' => 'Network Infrastructure & Deployment',
+                'description' => 'Planning, designing, building, and expanding telecommunications infrastructure from concept to commissioning.',
+                'capabilities' => ['Full Turnkey (FTK)', 'Network Rollout', 'Site Acquisition', 'Civil Works', 'Tower Construction', 'Steel Structures', 'Shelters & Passive Infrastructure', 'Installation & Commissioning', 'Testing & Acceptance', 'Network Modernization', 'Network Expansion'],
+                'photo_label' => 'PHOTO — network rollout site under construction',
+                'photo_src' => '/images/services/communication-tower-and-information-technology.jpg',
+                'image_side' => 'right',
+            ],
+            [
+                'slug' => 'wireless-fixed-networks',
+                'category_slug' => 'engineering-services',
+                'index_label' => '1.2',
+                'eyebrow' => 'WIRELESS & FIXED NETWORKS',
+                'title' => 'Wireless & Fixed Networks',
+                'description' => 'Delivering high-performance wireless and fixed network solutions that support connectivity, capacity, and future growth.',
+                'capabilities' => ['Radio Access Networks (RAN)', 'Microwave Transmission', 'Fiber Optic Networks', 'FTTH', 'Backbone & Metro Networks', 'Indoor Coverage Solutions', 'Small Cells', 'Private Networks', 'Core Network Integration', 'IP & MPLS Networks'],
+                'photo_label' => 'PHOTO — wireless & fixed network infrastructure',
+                'photo_src' => '/images/services/wireless-fixed-networks.jpg',
+                'image_side' => 'left',
+            ],
+            [
+                'slug' => 'data-centers-digital-infrastructure',
+                'category_slug' => 'engineering-services',
+                'index_label' => '1.3',
+                'eyebrow' => 'DATA CENTERS & DIGITAL INFRASTRUCTURE',
+                'title' => 'Data Centers & Digital Infrastructure',
+                'description' => 'Designing, building, and supporting resilient digital infrastructure that powers modern enterprise and telecommunications environments.',
+                'capabilities' => ['Data Center Infrastructure', 'Data Center Fit-Out', 'Server Rooms', 'Structured Cabling', 'Critical Power Systems', 'Cooling Infrastructure', 'Edge Data Centers', 'Disaster Recovery Infrastructure'],
+                'photo_label' => 'PHOTO — data center infrastructure',
+                'photo_src' => '/images/services/data-center-infrastructure.jpg',
+                'image_side' => 'right',
+            ],
+            [
+                'slug' => 'managed-services',
+                'category_slug' => 'engineering-services',
+                'index_label' => '1.4',
+                'eyebrow' => 'MANAGED OPERATIONS',
+                'title' => 'Managed Operations',
+                'description' => 'Delivering long-term operational excellence through proactive support, maintenance, optimization, and managed services.',
+                'capabilities' => ['Managed Services', 'Network Operations Center (NOC)', 'Field Operations', 'Preventive Maintenance', 'Corrective Maintenance', 'Operations & Maintenance (O&M)', 'Network Optimization', 'Performance Management', 'Core Network Support', 'Level 2 Technical Support', 'SLA Management'],
+                'photo_label' => 'PHOTO — 24/7 NOC operations floor',
+                'photo_src' => '/images/services/managed-services-noc.jpg',
+                'image_side' => 'left',
+            ],
+            [
+                'slug' => 'engineering-technical-services',
+                'category_slug' => 'engineering-services',
+                'index_label' => '1.5',
+                'eyebrow' => 'ENGINEERING & TECHNICAL SERVICES',
+                'title' => 'Engineering & Technical Services',
+                'description' => 'Providing specialized engineering expertise throughout planning, implementation, integration, and operational readiness.',
+                'capabilities' => ['Network Design', 'Site Surveys & Technical Audits', 'Capacity Planning', 'Infrastructure Assessments', 'Integration Services', 'Testing & Commissioning', 'Technical Documentation', 'Quality Assurance', 'Technical Training'],
+                'photo_label' => 'PHOTO — engineering & technical services',
+                'photo_src' => '/images/services/engineering-technical-services.jpg',
+                'image_side' => 'right',
+            ],
+            [
+                'slug' => 'pmo-project-delivery',
+                'category_slug' => 'pmo-project-delivery',
+                'index_label' => '2.1',
+                'eyebrow' => 'PMO & PROJECT DELIVERY',
+                'title' => 'Governance That Drives Successful Delivery',
+                'description' => 'Our PMO services establish the governance, structure, and leadership required to successfully deliver complex infrastructure programs, ensuring alignment with business objectives while maintaining control over cost, schedule, quality, risk, and performance.',
+                'capabilities' => ['Enterprise PMO', 'Program Management', 'Project Management', 'Portfolio Management', 'Planning & Scheduling', 'Project Controls', 'Cost Management', 'Risk Management', 'Change Management', 'Quality Management', 'Resource Management', 'Governance Frameworks', 'KPI & Performance Reporting', 'Executive Dashboards', 'Transformation Programs'],
+                'photo_label' => 'PHOTO — program governance & executive reporting',
+                'photo_src' => '/images/services/pmo-project-delivery.jpg',
+                'image_side' => 'right',
+            ],
+            [
+                'slug' => 'technical-advisory',
+                'category_slug' => 'technical-advisory',
+                'index_label' => '3.1',
+                'eyebrow' => 'TECHNICAL ADVISORY',
+                'title' => 'Strategic Insight. Independent Expertise.',
+                'description' => 'Our advisory services help organizations make informed investment, technology, and infrastructure decisions by combining engineering knowledge with practical industry experience and independent technical assessment.',
+                'capabilities' => ['Technology Strategy', 'Digital Transformation Advisory', 'Infrastructure Planning', 'Network Strategy', 'Technical Due Diligence', 'Vendor Evaluation & Selection', 'Feasibility Studies', 'Solution Architecture', 'Infrastructure Assessments', 'Technical Audits', 'Engineering Consulting', 'RFP Development & Technical Evaluation', 'Independent Verification & Validation (IV&V)'],
+                'photo_label' => 'PHOTO — advisory workshop / strategy session',
+                'photo_src' => '/images/services/technical-advisory.jpg',
+                'image_side' => 'right',
+            ],
+            [
+                'slug' => 'tower-energy-solutions',
+                'category_slug' => 'telecom-products-infrastructure',
+                'index_label' => '4.1',
+                'eyebrow' => 'TOWER & ENERGY SOLUTIONS',
+                'title' => 'Tower & Energy Solutions',
+                'description' => 'Power and energy systems that keep telecom sites running reliably — from diesel generators and hybrid power to batteries, rectifiers, and cooling.',
+                'capabilities' => ['Diesel Generators', 'Hybrid Power Systems', 'Lithium Batteries', 'Rectifiers & Inverters', 'Cooling Solutions'],
+                'photo_label' => 'PHOTO — tower & energy solutions',
+                'photo_src' => '/images/services/data-center-infrastructure.jpg',
+                'image_side' => 'right',
+            ],
+            [
+                'slug' => 'towers-passive-infrastructure',
+                'category_slug' => 'telecom-products-infrastructure',
+                'index_label' => '4.2',
+                'eyebrow' => 'TOWERS & PASSIVE INFRASTRUCTURE',
+                'title' => 'Towers & Passive Infrastructure',
+                'description' => 'Structural and passive infrastructure that supports network deployment — towers, monopoles, shelters, outdoor cabinets, and civil works.',
+                'capabilities' => ['Towers & Monopoles', 'Telecom Shelters', 'Outdoor Cabinets', 'Civil Infrastructure'],
+                'photo_label' => 'PHOTO — towers & passive infrastructure',
+                'photo_src' => '/images/services/communication-tower-and-information-technology.jpg',
+                'image_side' => 'left',
+            ],
+            [
+                'slug' => 'network-equipment',
+                'category_slug' => 'telecom-products-infrastructure',
+                'index_label' => '4.3',
+                'eyebrow' => 'NETWORK EQUIPMENT',
+                'title' => 'Network Equipment',
+                'description' => 'Connectivity equipment for operators and enterprises — CPE, fixed wireless access, and enterprise connectivity solutions.',
+                'capabilities' => ['Customer Premises Equipment (CPE)', 'Fixed Wireless Access', 'Enterprise Connectivity Solutions'],
+                'photo_label' => 'PHOTO — network equipment',
+                'photo_src' => '/images/services/wireless-fixed-networks.jpg',
+                'image_side' => 'right',
+            ],
+            [
+                'slug' => 'telecom-accessories',
+                'category_slug' => 'telecom-products-infrastructure',
+                'index_label' => '4.4',
+                'eyebrow' => 'TELECOM ACCESSORIES',
+                'title' => 'Telecom Accessories',
+                'description' => 'Installation materials and accessories that complete the site build — antennas, RF solutions, power accessories, and connectivity materials.',
+                'capabilities' => ['Antennas & RF Solutions', 'Telecom Site Accessories', 'Power & Connectivity Accessories', 'Installation Materials'],
+                'photo_label' => 'PHOTO — telecom accessories',
+                'photo_src' => '/images/services/enterprise-structured-cabling.jpg',
+                'image_side' => 'left',
+            ],
+        ];
+
+        foreach ($services as $i => $service) {
+            Service::updateOrCreate(
+                ['slug' => $service['slug']],
+                array_merge($service, ['sort_order' => $i]),
+            );
+        }
+    }
+}
