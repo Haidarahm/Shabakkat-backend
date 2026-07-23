@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Certifications;
 
+use App\Filament\Forms\Components\MediaUpload;
 use App\Filament\Resources\Certifications\Pages\CreateCertification;
 use App\Filament\Resources\Certifications\Pages\EditCertification;
 use App\Filament\Resources\Certifications\Pages\ListCertifications;
@@ -39,10 +40,9 @@ class CertificationResource extends Resource
                 TextInput::make('title')
                     ->required()
                     ->columnSpanFull(),
-                TextInput::make('logo_src')
-                    ->label('Logo path')
-                    ->helperText('e.g. /images/certs/iso-9001.svg')
-                    ->required(),
+                MediaUpload::make('logo_src', 'certifications', 'Logo')
+                    ->required()
+                    ->columnSpanFull(),
                 TextInput::make('sort_order')
                     ->numeric()
                     ->default(0)

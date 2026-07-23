@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Projects;
 
+use App\Filament\Forms\Components\MediaUpload;
 use App\Filament\Resources\Projects\Pages\CreateProject;
 use App\Filament\Resources\Projects\Pages\EditProject;
 use App\Filament\Resources\Projects\Pages\ListProjects;
@@ -72,9 +73,8 @@ class ProjectResource extends Resource
                     ->rows(3)
                     ->columnSpanFull(),
                 TextInput::make('photo_label'),
-                TextInput::make('photo_src')
-                    ->label('Photo path')
-                    ->helperText('e.g. /images/projects/example.jpg'),
+                MediaUpload::make('photo_src', 'projects', 'Photo')
+                    ->columnSpanFull(),
                 TextInput::make('related_service_href')
                     ->label('Related service URL'),
                 TextInput::make('sort_order')

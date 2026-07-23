@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\FeaturedProjects;
 
+use App\Filament\Forms\Components\MediaUpload;
 use App\Filament\Resources\FeaturedProjects\Pages\CreateFeaturedProject;
 use App\Filament\Resources\FeaturedProjects\Pages\EditFeaturedProject;
 use App\Filament\Resources\FeaturedProjects\Pages\ListFeaturedProjects;
@@ -46,9 +47,9 @@ class FeaturedProjectResource extends Resource
                     ->label('Link URL')
                     ->required(),
                 TextInput::make('photo_label'),
-                TextInput::make('photo_src')
-                    ->label('Photo path')
-                    ->required(),
+                MediaUpload::make('photo_src', 'featured-projects', 'Photo')
+                    ->required()
+                    ->columnSpanFull(),
                 TextInput::make('sort_order')
                     ->numeric()
                     ->default(0)

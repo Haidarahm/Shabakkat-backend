@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Offices;
 
+use App\Filament\Forms\Components\MediaUpload;
 use App\Filament\Resources\Offices\Pages\CreateOffice;
 use App\Filament\Resources\Offices\Pages\EditOffice;
 use App\Filament\Resources\Offices\Pages\ListOffices;
@@ -57,8 +58,8 @@ class OfficeResource extends Resource
                     ->columnSpanFull(),
                 TextInput::make('phone')
                     ->tel(),
-                TextInput::make('photo_src')
-                    ->label('Photo path'),
+                MediaUpload::make('photo_src', 'offices', 'Photo')
+                    ->columnSpanFull(),
                 Toggle::make('is_headquarters')
                     ->label('Headquarters'),
                 TextInput::make('map_cx')

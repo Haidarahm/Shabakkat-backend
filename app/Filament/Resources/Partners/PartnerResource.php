@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Partners;
 
+use App\Filament\Forms\Components\MediaUpload;
 use App\Filament\Resources\Partners\Pages\CreatePartner;
 use App\Filament\Resources\Partners\Pages\EditPartner;
 use App\Filament\Resources\Partners\Pages\ListPartners;
@@ -40,10 +41,9 @@ class PartnerResource extends Resource
             ->components([
                 TextInput::make('name')
                     ->required(),
-                TextInput::make('logo_src')
-                    ->label('Logo path')
-                    ->helperText('e.g. /images/logo/partner.webp')
-                    ->required(),
+                MediaUpload::make('logo_src', 'partners', 'Logo')
+                    ->required()
+                    ->columnSpanFull(),
                 TextInput::make('sort_order')
                     ->numeric()
                     ->default(0)

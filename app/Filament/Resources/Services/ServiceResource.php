@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Services;
 
+use App\Filament\Forms\Components\MediaUpload;
 use App\Filament\Resources\Services\Pages\CreateService;
 use App\Filament\Resources\Services\Pages\EditService;
 use App\Filament\Resources\Services\Pages\ListServices;
@@ -63,9 +64,8 @@ class ServiceResource extends Resource
                 TagsInput::make('capabilities')
                     ->columnSpanFull(),
                 TextInput::make('photo_label'),
-                TextInput::make('photo_src')
-                    ->label('Photo path')
-                    ->helperText('e.g. /images/services/example.jpg'),
+                MediaUpload::make('photo_src', 'services', 'Photo')
+                    ->columnSpanFull(),
                 Select::make('image_side')
                     ->options([
                         'left' => 'Left',

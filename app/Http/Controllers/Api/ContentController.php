@@ -15,6 +15,7 @@ use App\Models\Service;
 use App\Models\ServiceCategory;
 use App\Models\Stat;
 use App\Models\Testimonial;
+use App\Support\MediaUrl;
 
 class ContentController extends Controller
 {
@@ -36,7 +37,7 @@ class ContentController extends Controller
     {
         $items = FeaturedProject::orderBy('sort_order')->get()->map(fn ($p) => [
             'photoLabel' => $p->photo_label,
-            'photoSrc' => $p->photo_src,
+            'photoSrc' => MediaUrl::public($p->photo_src),
             'title' => $p->title,
             'description' => $p->description,
             'href' => $p->href,
@@ -82,7 +83,7 @@ class ContentController extends Controller
     {
         $partners = Partner::orderBy('sort_order')->get()->map(fn ($p) => [
             'name' => $p->name,
-            'logoSrc' => $p->logo_src,
+            'logoSrc' => MediaUrl::public($p->logo_src),
         ]);
 
         return response()->json($partners);
@@ -93,7 +94,7 @@ class ContentController extends Controller
         $certifications = Certification::orderBy('sort_order')->get()->map(fn ($c) => [
             'code' => $c->code,
             'title' => $c->title,
-            'logoSrc' => $c->logo_src,
+            'logoSrc' => MediaUrl::public($c->logo_src),
         ]);
 
         return response()->json($certifications);
@@ -107,7 +108,7 @@ class ContentController extends Controller
             'color' => $o->color,
             'address' => $o->address,
             'phone' => $o->phone,
-            'photoSrc' => $o->photo_src,
+            'photoSrc' => MediaUrl::public($o->photo_src),
             'isHeadquarters' => $o->is_headquarters,
             'mapPoint' => ($o->map_cx !== null && $o->map_cy !== null)
                 ? ['cx' => $o->map_cx, 'cy' => $o->map_cy]
@@ -179,7 +180,7 @@ class ContentController extends Controller
             'scale' => $p->scale,
             'results' => $p->results,
             'photoLabel' => $p->photo_label,
-            'photoSrc' => $p->photo_src,
+            'photoSrc' => MediaUrl::public($p->photo_src),
             'relatedServiceHref' => $p->related_service_href,
         ], fn ($v) => $v !== null);
     }
@@ -195,7 +196,7 @@ class ContentController extends Controller
             'description' => $s->description,
             'capabilities' => $s->capabilities,
             'photoLabel' => $s->photo_label,
-            'photoSrc' => $s->photo_src,
+            'photoSrc' => MediaUrl::public($s->photo_src),
             'imageSide' => $s->image_side,
         ], fn ($v) => $v !== null);
     }
