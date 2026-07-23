@@ -284,6 +284,35 @@
 				},
 				"description": "Required fields: name, email, message. Optional: company, phone, service. A hidden 'website' honeypot field, if filled, returns {ok:true} without saving."
 			}
+		},
+		{
+			"name": "Submit Job Application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{ "key": "Accept", "value": "application/json" }
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{ "key": "opening_id", "value": "1", "type": "text", "description": "Optional. Omit for a general CV submission." },
+						{ "key": "name", "value": "Jane Doe", "type": "text" },
+						{ "key": "email", "value": "jane@example.com", "type": "text" },
+						{ "key": "phone", "value": "+96512345678", "type": "text" },
+						{ "key": "linkedin", "value": "https://linkedin.com/in/janedoe", "type": "text" },
+						{ "key": "portfolio", "value": "https://janedoe.dev", "type": "text" },
+						{ "key": "cover_letter", "value": "I am excited to apply for this role.", "type": "text" },
+						{ "key": "cv", "type": "file", "src": [], "description": "Required. PDF, DOC, or DOCX. Max 5 MB." },
+						{ "key": "website", "value": "", "type": "text", "description": "Honeypot — leave empty." }
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/openings/apply",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "openings", "apply"]
+				},
+				"description": "Required: name, email, cv (pdf/doc/docx, max 5MB). Optional: opening_id, phone, linkedin, portfolio, cover_letter. Hidden 'website' honeypot returns {ok:true} without saving if filled."
+			}
 		}
 	]
 }

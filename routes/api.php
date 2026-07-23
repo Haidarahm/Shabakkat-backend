@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\ContentController;
 use App\Http\Controllers\Api\FaqController;
+use App\Http\Controllers\Api\OpeningApplicationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/health', fn () => response()->json(['ok' => true]));
@@ -24,6 +25,7 @@ Route::get('/stats', [ContentController::class, 'stats']);
 Route::get('/testimonials', [ContentController::class, 'testimonials']);
 Route::get('/awards', [ContentController::class, 'awards']);
 Route::get('/openings', [ContentController::class, 'openings']);
+Route::post('/openings/apply', [OpeningApplicationController::class, 'store']);
 
 Route::get('/faqs', [FaqController::class, 'index']);
 

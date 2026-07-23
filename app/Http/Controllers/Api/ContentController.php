@@ -152,11 +152,13 @@ class ContentController extends Controller
 
     public function openings()
     {
-        $openings = Opening::where('is_active', true)->orderBy('sort_order')->get()->map(fn ($o) => [
+        $openings = Opening::currentlyOpen()->orderBy('sort_order')->get()->map(fn ($o) => [
+            'id' => $o->id,
             'title' => $o->title,
             'department' => $o->department,
             'location' => $o->location,
             'type' => $o->type,
+            'closesAt' => $o->closes_at?->toIso8601String(),
         ]);
 
         return response()->json($openings);

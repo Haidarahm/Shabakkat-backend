@@ -32,7 +32,7 @@ class StatsOverview extends StatsOverviewWidget
                 ->description('Awaiting review')
                 ->icon('heroicon-o-inbox')
                 ->color('danger'),
-            Stat::make('Open roles', Opening::where('is_active', true)->count())
+            Stat::make('Open roles', Opening::currentlyOpen()->count())
                 ->description('Active job openings')
                 ->icon('heroicon-o-user-plus'),
         ];

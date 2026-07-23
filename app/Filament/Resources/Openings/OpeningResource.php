@@ -10,6 +10,7 @@ use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
@@ -51,6 +52,11 @@ class OpeningResource extends Resource
                 Toggle::make('is_active')
                     ->label('Active / published')
                     ->default(true),
+                DateTimePicker::make('closes_at')
+                    ->label('Auto-deactivate at')
+                    ->helperText('When set, this opening becomes inactive automatically after this date/time. Leave empty to keep it open until you turn it off.')
+                    ->seconds(false)
+                    ->native(false),
                 TextInput::make('sort_order')
                     ->numeric()
                     ->default(0)
@@ -74,6 +80,11 @@ class OpeningResource extends Resource
                 IconColumn::make('is_active')
                     ->label('Active')
                     ->boolean(),
+                TextColumn::make('closes_at')
+                    ->label('Closes')
+                    ->dateTime('M j, Y H:i')
+                    ->placeholder('—')
+                    ->sortable(),
                 TextColumn::make('sort_order')
                     ->sortable(),
             ])
