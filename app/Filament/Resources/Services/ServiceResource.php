@@ -62,6 +62,8 @@ class ServiceResource extends Resource
                     ->rows(3)
                     ->columnSpanFull(),
                 TagsInput::make('capabilities')
+                    ->label('Capabilities')
+                    ->helperText('Point list shown on the website — aim for about 4–5 items, same pattern as project scope.')
                     ->columnSpanFull(),
                 TextInput::make('photo_label'),
                 MediaUpload::make('photo_src', 'services', 'Photo')
