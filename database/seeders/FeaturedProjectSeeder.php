@@ -14,7 +14,7 @@ class FeaturedProjectSeeder extends Seeder
                 'photo_label' => 'PHOTO — Iraq network site',
                 'photo_src' => '/images/projects/iraq-network-site.jpg',
                 'title' => 'Iraq Nationwide Managed Services',
-                'description' => 'NOC, field maintenance, core operations, and Level 2 support delivered at national scale since 2010.',
+                'description' => 'NOC, field maintenance, core operations, and Level 2 support delivered at scale since 2010.',
                 'href' => '/projects#iraq-nationwide-managed-services',
             ],
             [
