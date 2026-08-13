@@ -21,7 +21,7 @@ class FeaturedProjectSeeder extends Seeder
                 'photo_label' => 'PHOTO — Kuwait NOC operations',
                 'photo_src' => '/images/projects/kuwait-rollout-crew.jpg',
                 'title' => 'Kuwait Managed Services Program',
-                'description' => 'Managed services, NOC, and field operations supporting STC, Ooredoo, and Zain since 2009.',
+                'description' => 'Managed services, NOC, and field operations supporting Kuwait telecom operators since 2009.',
                 'href' => '/projects#kuwait-managed-services-program',
             ],
             [

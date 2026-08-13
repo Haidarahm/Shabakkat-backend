@@ -27,7 +27,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'slug' => 'kuwait-managed-services-program',
-                'client' => 'STC, Ooredoo & Zain',
+                'client' => 'Telecom Operators',
                 'country' => 'Kuwait',
                 'year' => '2009–ongoing',
                 'tag' => 'MANAGED SERVICES',
@@ -35,7 +35,7 @@ class ProjectSeeder extends Seeder
                 'title' => 'Managed services program for all three telecom operators',
                 'challenge' => "Kuwait's three telecom operators needed a single partner able to run day-to-day network operations, NOC, and field operations at scale.",
                 'scope' => ['Day-to-day managed network services for telecom operators', 'Field operations and on-site technical support', '24/7 network operations center (NOC) coverage'],
-                'results' => 'A running engagement supporting STC, Ooredoo, and Zain since 2009 with managed services, NOC, and field operations.',
+                'results' => 'A running engagement supporting Kuwait telecom operators since 2009 with managed services, NOC, and field operations.',
                 'photo_label' => 'PHOTO — Kuwait NOC operations',
                 'photo_src' => '/images/projects/kuwait-rollout-crew.jpg',
                 'related_service_href' => '/services/engineering-services#managed-services',
