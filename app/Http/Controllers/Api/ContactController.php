@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ContactInquiryMail;
 use App\Models\ContactSubmission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\ValidationException;
+use Throwable;
 
 class ContactController extends Controller
 {
@@ -38,7 +42,17 @@ class ContactController extends Controller
             'status' => 'new',
         ]);
 
-        // TODO: dispatch email / CRM notification here.
+        $to = config('services.contact.notification_email');
+        if (filled($to)) {
+            try {
+                Mail::to($to)->send(new ContactInquiryMail($submission));
+            } catch (Throwable $e) {
+                Log::error('Failed to send contact inquiry email', [
+                    'submission_id' => $submission->id,
+                    'error' => $e->getMessage(),
+                ]);
+            }
+        }
 
         return response()->json(['ok' => true, 'id' => $submission->id], 201);
     }

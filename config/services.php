@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'contact' => [
+        'notification_email' => env('CONTACT_NOTIFICATION_EMAIL', 'haidarahmad421@gmail.com'),
+    ],
+
 ];
