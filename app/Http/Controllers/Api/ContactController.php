@@ -42,13 +42,14 @@ class ContactController extends Controller
             'status' => 'new',
         ]);
 
-        $to = config('services.contact.notification_email');
-        if (filled($to)) {
+        $recipients = config('services.contact.notification_emails', []);
+        if (! empty($recipients)) {
             try {
-                Mail::to($to)->send(new ContactInquiryMail($submission));
+                Mail::to($recipients)->send(new ContactInquiryMail($submission));
             } catch (Throwable $e) {
                 Log::error('Failed to send contact inquiry email', [
                     'submission_id' => $submission->id,
+                    'recipients' => $recipients,
                     'error' => $e->getMessage(),
                 ]);
             }
